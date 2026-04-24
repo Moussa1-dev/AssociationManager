@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <!-- Auth -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.association.manager.ui.auth.LoginFragment"
+        android:label="@string/login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_login_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.association.manager.ui.auth.RegisterFragment"
+        android:label="@string/register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_to_login"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_register_to_dashboard"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Dashboard -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.association.manager.ui.dashboard.DashboardFragment"
+        android:label="@string/dashboard_title"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <!-- Members -->
+    <fragment
+        android:id="@+id/memberListFragment"
+        android:name="com.association.manager.ui.members.MemberListFragment"
+        android:label="@string/members_title"
+        tools:layout="@layout/fragment_member_list">
+        <action
+            android:id="@+id/action_members_to_add"
+            app:destination="@id/addMemberFragment" />
+        <action
+            android:id="@+id/action_members_to_detail"
+            app:destination="@id/memberDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addMemberFragment"
+        android:name="com.association.manager.ui.members.AddMemberFragment"
+        android:label="@string/add_member"
+        tools:layout="@layout/fragment_add_member">
+        <argument
+            android:name="memberId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/memberDetailFragment"
+        android:name="com.association.manager.ui.members.MemberDetailFragment"
+        android:label="@string/member_detail"
+        tools:layout="@layout/fragment_member_detail">
+        <argument
+            android:name="memberId"
+            app:argType="long" />
+    </fragment>
+
+    <!-- Finance -->
+    <fragment
+        android:id="@+id/financeFragment"
+        android:name="com.association.manager.ui.finance.FinanceFragment"
+        android:label="@string/finance_title"
+        tools:layout="@layout/fragment_finance">
+        <action
+            android:id="@+id/action_finance_to_add_transaction"
+            app:destination="@id/addTransactionFragment" />
+        <action
+            android:id="@+id/action_finance_to_cotisation"
+            app:destination="@id/cotisationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addTransactionFragment"
+        android:name="com.association.manager.ui.finance.AddTransactionFragment"
+        android:label="@string/add_transaction"
+        tools:layout="@layout/fragment_add_transaction">
+        <argument
+            android:name="transactionId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cotisationFragment"
+        android:name="com.association.manager.ui.finance.CotisationFragment"
+        android:label="@string/cotisations"
+        tools:layout="@layout/fragment_cotisation" />
+
+    <!-- Events -->
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="com.association.manager.ui.events.EventListFragment"
+        android:label="@string/events_title"
+        tools:layout="@layout/fragment_event_list">
+        <action
+            android:id="@+id/action_events_to_add"
+            app:destination="@id/addEventFragment" />
+        <action
+            android:id="@+id/action_events_to_detail"
+            app:destination="@id/eventDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addEventFragment"
+        android:name="com.association.manager.ui.events.AddEventFragment"
+        android:label="@string/add_event"
+        tools:layout="@layout/fragment_add_event">
+        <argument
+            android:name="eventId"
+            app:argType="long"
+            android:defaultValue="-1L" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/eventDetailFragment"
+        android:name="com.association.manager.ui.events.EventDetailFragment"
+        android:label="@string/event_detail"
+        tools:layout="@layout/fragment_event_detail">
+        <argument
+            android:name="eventId"
+            app:argType="long" />
+    </fragment>
+
+    <!-- More (Announcements, Documents, Votes) -->
+    <fragment
+        android:id="@+id/moreFragment"
+        android:name="com.association.manager.ui.MoreFragment"
+        android:label="@string/nav_more"
+        tools:layout="@layout/fragment_more">
+        <action
+            android:id="@+id/action_more_to_announcements"
+            app:destination="@id/announcementListFragment" />
+        <action
+            android:id="@+id/action_more_to_documents"
+            app:destination="@id/documentListFragment" />
+        <action
+            android:id="@+id/action_more_to_votes"
+            app:destination="@id/voteListFragment" />
+    </fragment>
+
+    <!-- Announcements -->
+    <fragment
+        android:id="@+id/announcementListFragment"
+        android:name="com.association.manager.ui.communication.AnnouncementListFragment"
+        android:label="@string/announcements_title"
+        tools:layout="@layout/fragment_announcement_list">
+        <action
+            android:id="@+id/action_announcements_to_add"
+            app:destination="@id/addAnnouncementFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addAnnouncementFragment"
+        android:name="com.association.manager.ui.communication.AddAnnouncementFragment"
+        android:label="@string/add_announcement"
+        tools:layout="@layout/fragment_add_announcement" />
+
+    <!-- Documents -->
+    <fragment
+        android:id="@+id/documentListFragment"
+        android:name="com.association.manager.ui.documents.DocumentListFragment"
+        android:label="@string/documents_title"
+        tools:layout="@layout/fragment_document_list">
+        <action
+            android:id="@+id/action_documents_to_add"
+            app:destination="@id/addDocumentFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addDocumentFragment"
+        android:name="com.association.manager.ui.documents.AddDocumentFragment"
+        android:label="@string/add_document"
+        tools:layout="@layout/fragment_add_document" />
+
+    <!-- Votes -->
+    <fragment
+        android:id="@+id/voteListFragment"
+        android:name="com.association.manager.ui.votes.VoteListFragment"
+        android:label="@string/votes_title"
+        tools:layout="@layout/fragment_vote_list">
+        <action
+            android:id="@+id/action_votes_to_create"
+            app:destination="@id/createVoteFragment" />
+        <action
+            android:id="@+id/action_votes_to_detail"
+            app:destination="@id/voteDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/createVoteFragment"
+        android:name="com.association.manager.ui.votes.CreateVoteFragment"
+        android:label="@string/create_vote"
+        tools:layout="@layout/fragment_create_vote" />
+
+    <fragment
+        android:id="@+id/voteDetailFragment"
+        android:name="com.association.manager.ui.votes.VoteDetailFragment"
+        android:label="@string/vote_detail"
+        tools:layout="@layout/fragment_vote_detail">
+        <argument
+            android:name="voteId"
+            app:argType="long" />
+    </fragment>
+
+</navigation>

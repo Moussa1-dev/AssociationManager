@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#1565C0</color>
+    <color name="primary_dark">#0D47A1</color>
+    <color name="primary_light">#42A5F5</color>
+    <color name="accent">#FF6F00</color>
+    <color name="accent_light">#FFA726</color>
+
+    <color name="background">#F5F5F5</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="error">#D32F2F</color>
+    <color name="success">#388E3C</color>
+    <color name="warning">#F57C00</color>
+
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#757575</color>
+    <color name="text_on_primary">#FFFFFF</color>
+
+    <color name="income_green">#4CAF50</color>
+    <color name="expense_red">#F44336</color>
+    <color name="pending_orange">#FF9800</color>
+
+    <color name="card_member">#E3F2FD</color>
+    <color name="card_finance">#E8F5E9</color>
+    <color name="card_event">#FFF3E0</color>
+    <color name="card_announcement">#FCE4EC</color>
+    <color name="card_document">#F3E5F5</color>
+    <color name="card_vote">#E0F2F1</color>
+</resources>

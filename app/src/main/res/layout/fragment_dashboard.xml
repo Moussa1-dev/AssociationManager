@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/margin_medium">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_body" />
+
+                <TextView
+                    android:id="@+id/tv_dashboard_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/dashboard_title"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_title"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <ImageButton
+                android:id="@+id/btn_logout"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/logout"
+                android:src="@android:drawable/ic_menu_close_clear_cancel" />
+        </LinearLayout>
+
+        <!-- Stats Grid Row 1 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/card_member"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_dashboard"
+                        android:layout_height="@dimen/icon_size_dashboard"
+                        android:src="@android:drawable/ic_menu_myplaces"
+                        android:contentDescription="@string/total_members"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:id="@+id/tv_member_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="0"
+                        android:textColor="@color/text_primary"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_members"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_caption" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/card_finance"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_dashboard"
+                        android:layout_height="@dimen/icon_size_dashboard"
+                        android:src="@android:drawable/ic_menu_manage"
+                        android:contentDescription="@string/treasury_balance"
+                        app:tint="@color/success" />
+
+                    <TextView
+                        android:id="@+id/tv_balance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="0 €"
+                        android:textColor="@color/text_primary"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/treasury_balance"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_caption" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Stats Grid Row 2 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin_small"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/card_event"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_dashboard"
+                        android:layout_height="@dimen/icon_size_dashboard"
+                        android:src="@android:drawable/ic_menu_my_calendar"
+                        android:contentDescription="@string/total_events"
+                        app:tint="@color/accent" />
+
+                    <TextView
+                        android:id="@+id/tv_event_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="0"
+                        android:textColor="@color/text_primary"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_events"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_caption" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin_small"
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/card_vote"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="@dimen/margin_medium">
+
+                    <ImageView
+                        android:layout_width="@dimen/icon_size_dashboard"
+                        android:layout_height="@dimen/icon_size_dashboard"
+                        android:src="@android:drawable/ic_menu_agenda"
+                        android:contentDescription="@string/active_votes"
+                        app:tint="@color/primary" />
+
+                    <TextView
+                        android:id="@+id/tv_vote_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_small"
+                        android:text="0"
+                        android:textColor="@color/text_primary"
+                        android:textSize="24sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/active_votes"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_size_caption" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <!-- Upcoming Events -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_large"
+            android:text="@string/upcoming_events"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_subtitle"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_upcoming_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:nestedScrollingEnabled="false" />
+
+        <TextView
+            android:id="@+id/tv_no_upcoming_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/margin_large"
+            android:text="@string/no_events"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</ScrollView>
